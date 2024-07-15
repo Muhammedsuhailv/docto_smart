@@ -13,6 +13,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    var screenWidth=MediaQuery.of(context).size.width;
+    var screenHeight=MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -34,21 +37,16 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(20.0),
               child: Container(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 110.0),
-                    child: Text(
-                      "Login Or Register To Book\nYour Appointments",
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
+                  Text(
+                    "Login Or Register To Book\nYour Appointments",
+                    style: TextStyle(fontSize: screenWidth *0.05, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 25,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 340.0),
-                    child: Text("Email"),
-                  ),
+                  Text("Email"),
                   SizedBox(
                     height: 10,
                   ),
@@ -56,10 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 25,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 315.0),
-                    child: Text("Password"),
-                  ),
+                  Text("Password"),
                   SizedBox(
                     height: 10,
                   ),
@@ -75,11 +70,11 @@ class _LoginPageState extends State<LoginPage> {
                             builder: (context) => HomePage(),
                           ));
                     },
-                    child: CustomButton(data: 'Login',height: 50,width: 400,)
+                    child: CustomButton(data: 'Login',height: 50,width:double.infinity,)
 
                   ),
                   SizedBox(
-                    height: 200,
+                    height: screenHeight *0.1,
                   ),
                   Center(
                       child: Text(

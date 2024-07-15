@@ -36,10 +36,9 @@ class _RegisterPageState extends State<RegisterPage> {
       selectedValue = newValue;
     });
   }
-
-
   @override
   Widget build(BuildContext context) {
+    var screenWidth=MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -73,10 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 25,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 340.0),
-                child: Text("Name"),
-              ),
+              Text("Name"),
               const SizedBox(
                 height: 10,
               ),
@@ -84,10 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 25,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 215.0),
-                child: Text("Whatsapp Number"),
-              ),
+              Text("Whatsapp Number"),
               SizedBox(
                 height: 10,
               ),
@@ -96,19 +89,13 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 25,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 315.0),
-                child: Text("Address"),
-              ),
+              Text("Address"),
               SizedBox(
                 height: 10,
               ),
               CustomTextfield(hintText: 'Enter Your Address'),
               SizedBox(height: 25,),
-              Padding(
-                padding: const EdgeInsets.only(right: 240.0),
-                child: Text("Location"),
-              ),
+              Text("Location"),
               CustomDropdown(
                 items: ['Kerala', 'Tamil Nadu', 'Uthar Pradesh', 'Andra Pradesh'],
                 hintText: '  Select Your Location',
@@ -117,10 +104,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
               ),
               SizedBox(height: 25,),
-              Padding(
-                padding: const EdgeInsets.only(right: 240.0),
-                child: Text("Branch"),
-              ),
+              Text("Branch"),
               CustomDropdown(
                 items: ['Malappuram', 'Palakkadu', 'Idukki', 'Calicut'],
                 hintText: '  Select Your Branch',
@@ -133,10 +117,7 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 25,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 240.0),
-                child: Text("Total Amount"),
-              ),
+              Text("Total Amount"),
               SizedBox(
                 height: 10,
               ),
@@ -144,10 +125,7 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 25,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 240.0),
-                child: Text("Discount Amount"),
-              ),
+              Text("Discount Amount"),
               SizedBox(
                 height: 10,
               ),
@@ -155,14 +133,12 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 25,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 240.0),
-                child: Text("Payment Option"),
-              ),
+              
+              Text("Payment Option"),
               Row(
                 children: [
                   Expanded(
-                    child: RadioListTile(title:Text("Cash",style: TextStyle(fontSize: 14),),value: "Cash", groupValue: payment, onChanged: (value) {
+                    child: RadioListTile(title:Text("Cash",style: TextStyle(fontSize: screenWidth *0.02 ),),value: "Cash", groupValue: payment, onChanged: (value) {
                       setState(() {
                         payment=value;
                       });
@@ -187,10 +163,7 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 25,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 240.0),
-                child: Text("Advance Amount"),
-              ),
+              Text("Advance Amount"),
               const SizedBox(
                 height: 10,
               ),
@@ -198,10 +171,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 25,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 240.0),
-                child: Text("Balance Amount"),
-              ),
+              Text("Balance Amount"),
               const SizedBox(
                 height: 10,
               ),
@@ -209,10 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 25,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 240.0),
-                child: Text("Treatment Date"),
-              ),
+              Text("Treatment Date"),
               const SizedBox(
                 height: 10,
               ),
@@ -229,18 +196,15 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 25,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 200.0),
-                child: Text("Treatment Time"),
-              ),
+              Text("Treatment Time"),
               const SizedBox(
                 height: 10,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: 180,
+                    width: screenWidth *0.42,
                     child: CustomDropdown(
                       items: const ['01', '02', '03', '04'],
                       hintText: '  Hour',
@@ -250,7 +214,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                   SizedBox(
-                    width: 180,
+                    width: screenWidth *0.42,
                     child: CustomDropdown(
                       items: ['10', '20', '30', '40'],
                       hintText: '  Minutes',

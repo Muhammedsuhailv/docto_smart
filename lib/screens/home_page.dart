@@ -21,6 +21,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -50,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
-                      width: 250,
+                      width: screenWidth   * 0.6,
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
@@ -58,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                             prefixIcon: Icon(Icons.search),
                             hintText: 'Search Treatments'),
                       )),
-                  CustomButton(data: 'Search',height: 50,width: 100,)
+                  CustomButton(data: 'Search',height: 50,width: screenWidth * 0.3,)
 
                 ],
               ),
@@ -108,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(top: 8, left: 8),
                       child: Card(
                           child: Container(
-                        width: 300,
+                        width: screenWidth * 3,
                         height: 175,
                         child: Padding(
                           padding: const EdgeInsets.all(18.0),
@@ -184,9 +186,7 @@ class _HomePageState extends State<HomePage> {
                                       style: TextStyle(fontSize: 15),
                                     ),
                                   ),
-                                  SizedBox(
-                                    width: 180,
-                                  ),
+                                      Spacer(),
                                   Icon(
                                     Icons.arrow_forward_ios,
                                     color: Colors.green,
@@ -209,7 +209,7 @@ class _HomePageState extends State<HomePage> {
                         builder: (context) => RegisterPage(),
                       ));
                 },
-                child:CustomButton(data: 'Register Now',height: 50,width: 400,),
+                child:CustomButton(data: 'Register Now',height: 50,width: double.infinity,),
               ),
               SizedBox(height: 10,),
             ],
